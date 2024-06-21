@@ -1,0 +1,10 @@
+input_shape: 720
+layers: [{'type': 'Dense', 'units': 256, 'activation': 'relu'}, {'type': 'Dropout', 'rate': 0.5}, {'type': 'Dense', 'units': 128, 'activation': 'relu'}, {'type': 'Dropout', 'rate': 0.5}, {'type': 'Dense', 'units': 26, 'activation': 'softmax'}]
+optimizer: SGD
+learning_rate: 0.03
+loss: categorical_crossentropy
+metrics: ['accuracy']
+epochs: 300
+batch_size: 128
+validation_split: 0.2
+early_stopping_patience: 30
