@@ -1,1 +1,1 @@
-Acurácia do modelo: 65.50%
+Acurácia do modelo: 68.50%

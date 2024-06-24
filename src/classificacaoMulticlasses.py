@@ -1,3 +1,13 @@
+#######################################################################
+#                Inteligencia Artificial - ACH2016                    #
+#                                                                     #
+#  Gandhi Daiti Miyahara 11207773                                     #
+#  Lucas Tatsuo Nishida 11208270                                      #
+#  Juan Kineipe 11894610                                              #
+#  Leonardo Ken Matsuda Cancela 11207665                              #
+#  João de Araújo Barbosa da Silva 11369704                           #
+#                                                                     #
+#######################################################################
 import os
 import numpy as np
 import cv2
@@ -118,7 +128,7 @@ save_weights(initial_weights, 'outputs/multiclasses/initial_weights.txt')
 # Definir EarlyStopping callback
 early_stopping = callbacks.EarlyStopping(
     monitor='val_accuracy',  # Métrica a ser monitorada
-    patience=30,             # Número de épocas sem melhoria após o qual o treinamento será interrompido
+    patience=50,             # Número de épocas sem melhoria após o qual o treinamento será interrompido
     restore_best_weights=True  # Restaurar os pesos do modelo para a melhor época
 )
 
@@ -126,7 +136,7 @@ early_stopping = callbacks.EarlyStopping(
 history = model.fit(
     train_images, 
     train_labels, 
-    epochs=300, 
+    epochs=3000, 
     verbose=1,
     batch_size=128, 
     validation_split=0.2,
