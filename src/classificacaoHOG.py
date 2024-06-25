@@ -70,9 +70,11 @@ train_images, train_labels, test_images, test_labels = load_images_and_extract_h
 # Definir o modelo
 model = models.Sequential()
 model.add(layers.Dense(256, activation='relu', input_shape=(train_images.shape[1],)))
-model.add(layers.Dropout(0.5))
+model.add(layers.Dropout(0.0))
+
 model.add(layers.Dense(128, activation='relu'))
-model.add(layers.Dropout(0.5))
+model.add(layers.Dropout(0.0))
+
 model.add(layers.Dense(26, activation='softmax'))
 
 sgd = optimizers.SGD(learning_rate=0.03)
@@ -126,7 +128,7 @@ history = model.fit(
     epochs=300,
     verbose=1,
     batch_size=128,
-    validation_split=0.2,
+    validation_split=0.1,
     callbacks=[early_stopping]
 )
 

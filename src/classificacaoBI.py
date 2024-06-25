@@ -71,15 +71,17 @@ train_images, train_labels, test_images, test_labels = load_images(folder_path)
 model = models.Sequential()
 model.add(layers.Conv2D(8, kernel_size=(3, 3), activation='relu', input_shape=(10, 12, 1)))
 model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Dropout(0.25))  # Adicionar Dropout após a camada convolucional
+model.add(layers.Dropout(0.0))  # Adicionar Dropout após a camada convolucional
+
 
 model.add(layers.Conv2D(16, kernel_size=(3, 3), activation='relu'))
 model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Dropout(0.25))  # Adicionar Dropout após a camada convolucional
+model.add(layers.Dropout(0.0))  # Adicionar Dropout após a camada convolucional
+
 
 model.add(layers.Flatten())
 model.add(layers.Dense(32, activation='relu'))
-model.add(layers.Dropout(0.5))  # Adicionar Dropout após a camada densa
+model.add(layers.Dropout(0.0))  # Adicionar Dropout após a camada densa
 model.add(layers.Dense(2, activation='softmax'))  # A saída deve ter 2 neurônios para classes binárias
 
 # Ajustar a taxa de aprendizado
